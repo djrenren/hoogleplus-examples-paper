@@ -182,6 +182,33 @@ available from
 % Why does your study answer your research question? Why
 % does your evaluation address your hypothesis? Make sure your study, and the
 % variables you're measuring, properly address the question you are asking.
+\subsection{Measures}
+% We expected to see that examples increased the speed of candidate selection
+% with little to no loss in accuracy.
+% %
+% Furthermore we expected that speedup to be explained by decreased reliance on
+% the interpreter.
+% %
+% Specifically, users should no longer need to run their own input-output tests
+% on the candidate programs.
+
+For each participant, we measured:
+\begin{itemize}
+    \item Time-to-correct solution (per task)
+    \item Count of incorrect guesses (per task)
+    \item Count and type of interpreter queries (across all tasks)
+\end{itemize}
+
+The first metric directly tests the hypothesis that examples improve
+selection speed, but the result could be misleading if there was also a
+change in selection accuracy.
+%
+Counting incorrect guesses ensures that any such change is captured.
+%
+Beyond assessing the effectiveness of examples, measuring how often and why
+participants used the interactive interpreter provides insight into any 
+behavior changes that might occur.
+
 \begin{figure*}[t!]
     \centering
     \begin{subfigure}[t]{0.5\textwidth}
