@@ -1,17 +1,23 @@
 \section{Discussion}
 \label{sec:discussion}
 
-\subsection{Statistical insignificance}
-Why it be like it do?
-
-\subsection{Task 2}
-The Wilcoxon Rank-Sum test on task 2 was $p=0.03$, showing a runaway success
-that examples do help participants find the correct program faster.
+\subsection{Hope for examples}
+Although the study failed to show that examples aided candidate selection in
+the general case, it's possible that in specific case it makes a large difference.
 %
-We suspect that second task was unique among the four participants completed.
+A Wilcoxon Rank-Sum test on the data from Task 2 shows that the \example
+group was faster with a confidence of $p=0.03$.
 %
-The tool produced up to ten candidate programs for a given type signature, and
-for task 2, the correct solution was at the very end.
+While this could just be noise, the correct solution for Task 2 was 10th in
+the list while Tasks 1 and 2 had their solution in the first two spots.
 %
-Task 1 and 4 had the correct solution listed in the first and second places,
-respectively.
+Task 3 had no solution.
+%
+If examples speed up candidate assessment, we'd expect this effect to be
+magnified by the number of candidates assessed.
+%
+Because users had to sift through 9 incorrect solutions to get to the correct
+one, it makes sense that Task 2 showed the most dramatic effect.
+%
+A study that randomizes solution location rather than preserving the synthesizer's ordering
+could test this hypothesis.
