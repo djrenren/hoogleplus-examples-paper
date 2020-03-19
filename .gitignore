@@ -13,3 +13,4 @@ auto/
 *.log
 *.out
 *.synctex.gz
+comment.cut
