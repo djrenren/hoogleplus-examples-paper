@@ -5,7 +5,7 @@
 Although the study failed to show that examples aided candidate selection in
 the general case, it's possible that in specific case it makes a large difference.
 %
-A Wilcoxon Rank-Sum test on the data from Task 2 shows that the \example
+A Wilcoxon Rank-Sum test on the data from Task 2 shows that the \examples
 group was faster with a confidence of $p=0.03$.
 %
 While this could just be noise, the correct solution for Task 2 was 10th in
@@ -21,3 +21,20 @@ one, it makes sense that Task 2 showed the most dramatic effect.
 %
 A study that randomizes solution location rather than preserving the synthesizer's ordering
 could test this hypothesis.
+
+\subsection{Task-treatment vs. Participant-treatment}
+For this study, participants were assigned to either the \examples or
+\noexamples group.
+%
+This had the benefit of being simple to implement, and easy to understand for
+participants, but was not without drawbacks.
+%
+The current study is sensitive to varying levels of Haskell knowledge, relying on
+the law of large numbers to eventually even things out.
+%
+Unfortunately, this study only contained 10 participants, and so is skewed by
+the particulars of each participants skill levels.
+%
+We opted for the simpler study due to constraints for class, but a future
+study might be better served by giving each participant a randomized mix of \examples
+and \noexamples treatments.
