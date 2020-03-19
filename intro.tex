@@ -1,3 +1,39 @@
 \section{Introduction}
 
-intro here.
+Imagine asking your computer to write a function for you and it works on the
+first try.
+%
+Well, program synthesis isn't quite there.
+%
+But getting there will necessarily involve some back and forth between the user
+and computer.
+%
+Often the function specification is less precise the than function requested.
+%
+In this case, a program synthesizer can come up with any number of solutions
+that all meet the specification, to varying degrees of utility.
+
+Our work is based on\textsc{Hoogle+}, a program synthesis engine for the
+Haskell programming language \cite{hoogle_plus_2020}.
+%
+A user inputs a type signature of a function, like \texttt{a -> [Maybe a] -> a}
+(read: ``A function that takes a thing and a list of optional-things, and
+returns a thing'').
+%
+\textsc{Hoogle+} then looks for Haskell programs that use library calls (from
+a small, builtin set of functions) that satisfies the type signature.
+%
+Note that there may be an infinite number of so-called \emph{inhabitants} of a type.
+%
+This presents a search problem for users of the system.
+
+How can a user sift through the programs synthesized to find the right
+implementation of the type signature, for their use case?
+%
+We extend the system to provide some input-output examples for a chosen set of
+queries, enough to run our study.
+%
+For now these examples were stubbed and chosen without particular regard for how
+they might distinguish various candidate solutions.
+%
+
