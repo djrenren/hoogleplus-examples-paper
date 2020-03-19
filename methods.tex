@@ -1,26 +1,72 @@
 \section{Method}
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{method/control-ui.png}
+        \caption{Control treatment, no examples}
+    \end{subfigure}%
+    ~
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{method/treatment-ui.png}
+        \caption{Experimental treatment, examples}
+    \end{subfigure}
+    \caption{Each participant received one of the two treatments for the duration of the study.}
+    \label{fig:ui}
+\end{figure*}
+To assess whether examples aid recognition of candidate programs, we
+developed two variants of a synthesizer interface (see Figure~\ref{fig:ui})
 
-% --- COPIED FROM ABSTRACT ASSIGNMENT --- %
-% Explain your study design, illustrate how the study's results will provide
-% evidence for/against your hypothesis, and how the question, hypothesis, and
-% study all line up. We encourage you to mirror/copy/adapt other researchers
-% methods (e.g. by drawing from the class readings) whenever appropriate (and
-% not when it isn't appropriate).
-
-% There are three major points you should hit here.
-
-% Study design:
-% What are you going to do? Be detailed and precise.
-
-% Ecological Validity:
-% Why does your study answer your research question? Why
-% does your evaluation address your hypothesis? Make sure your study, and the
-% variables you're measuring, properly address the question you are asking.
-
-We gathered 10 participants from around our department's building and from the
-local Hillcrest community.
+\paragraph{No-examples variant}
 %
-We required that participants be able to read some Haskell code.
+In the \noexamples variant, a user can enter a Haskell type signature at the top and get a
+list of 10 candidate programs back.
+%
+These candidates are unmodified and in the same order that \hoogleplus
+synthesizer generates them.
+%
+The results are deterministic meaning that for a given type signature, the
+response is always the same.
+
+\paragraph{Examples variant}
+The \examples variant extends the \noexamples variant with input/output
+examples for each candidate.
+%
+For each, type signature in the study, we manually created three simple
+inputs of the appropriate type.
+%
+Each candidate program received the same three inputs.
+
+
+\subsection{Procedure}
+We gathered 10 haskell-literate participants from around our department's
+building and from the local Hillcrest community.
+%
+Participants were each assigned to either the \noexamples treatment or the
+\examples treatment for the duration of the study.
+%
+Each participant was presented a laptop with their respective tool variant open
+and an interactive haskell interpreter (GHCI) open to the side.
+%
+Throughout the study participants were allowed to use only the tool and the
+interpreter.
+
+After a brief tutorial tasks, participants were asked to complete 4 tasks.
+%
+Each task consisted of a type signature they would enter, and an informal
+english description of the behavior they were looking for.
+%
+They would then enter the type signature and identify the candidate program that
+met the specification, if it was present.
+%
+Participants were told at the beginning that the solution may not be present
+in the list---Task 3 did not have a solution in the list.
+
+After completing the four tasks, the candidates were given a brief survey
+that asked them about their haskell experience, their opinions on the tool,
+and their strategies for finding the correct answer.
+
 
 \subsection{Measures}
 
@@ -40,39 +86,3 @@ Counting incorrect guesses ensures that any such change is captured.
 Beyond assessing the effectiveness of examples, measuring how often and why
 participants used the interactive interpreter provides insight into any
 behavior changes that might occur.
-
-\subsection{Trials}
-We had two variants.
-%
-The control version of the tool only showed programs that matched a type signature.
-%
-The treatment version showed three input-output examples with each program
-suggested by the synthesizer.
-
-Each participant went through one training task and four trial tasks.
-%
-The task was to find the best implementation of a type signature and a
-description of what the program should do.
-%
-Timing began as soon as they were handed a card containing the task, and ended
-when they pointed out the correct solution.
-%
-There was one correct answer per task---and task 3 had no correct solution.
-%
-Each participant was in a single variant for the entirety of their tasks.
-
-\begin{figure*}[t!]
-    \centering
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{method/control-ui.png}
-        \caption{Control treatment, no examples}
-    \end{subfigure}%
-    ~
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{method/treatment-ui.png}
-        \caption{Experimental treatment, examples}
-    \end{subfigure}
-    \caption{Each participant received one of the two treatments for the duration of the study.}
-\end{figure*}

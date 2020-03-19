@@ -13,14 +13,14 @@ Often the function specification is less precise the than function requested.
 In this case, a program synthesizer can come up with any number of solutions
 that all meet the specification, to varying degrees of utility.
 
-Our work is based on\textsc{Hoogle+}, a program synthesis engine for the
+Our work is based on \hoogleplus, a program synthesis engine for the
 Haskell programming language \cite{hoogle_plus_2020}.
 %
 A user inputs a type signature of a function, like \texttt{a -> [Maybe a] -> a}
 (read: ``A function that takes a thing and a list of optional-things, and
 returns a thing'').
 %
-\textsc{Hoogle+} then looks for Haskell programs that use library calls (from
+\hoogleplus then looks for Haskell programs that use library calls (from
 a small, builtin set of functions) that satisfies the type signature.
 %
 Note that there may be an infinite number of so-called \emph{inhabitants} of a type.
