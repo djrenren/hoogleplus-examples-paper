@@ -1,56 +1,34 @@
 \section{Introduction}
+Writing code is difficult and often inadvisable. 
+%
+A recent approach to this classic conundrum is \emph{program synthesis} which
+takes a specification and generates a program that implements the
+specification---saving us from ourselves by letting the computer do the work.
+%
+The specification may be a collection of input/output pairs
+\cite{Feser_Chaudhuri_Dillig_2015}, a type signature \cite{hoogle_plus_2020},
+or even a combination of the two \cite{Osera_Zdancewic_2015}.
+%
+These specifications are intentionally vague; many programs different
+programs might meet the specification.
+%
+This keeps specification easy, but it requires the synthesizer to either guess,
+or, more realistically, produce multiple candidate programs.
 
-Program synthesis works by taking a specification and generating a program that
-implements the specification.
+Sifting through a list of candidate programs can be timeconsuming, so much so
+that it might be faster to write the code yourself.
 %
-In a sense it is the holy grail of computer science--to write a program for you.
-%
-There is a plethora of work trying to go straight to the goal, in a variety of ways.
-%
-Some use input-output examples as their specification
-\cite{Feser_Chaudhuri_Dillig_2015}.
-%
-Others use types and examples \cite{Osera_Zdancewic_2015}.
-%
-Still others use just types \cite{hoogle_plus_2020}.
+If we could speed up this process, without requiring more input from the
+user, we could allow programmers to both write easy specifications and
+efficiently find their desired program.
 
-However, in lieu of waiting for some graduate student to solve this open
-problem, we
-adopt a more practical approach and want to bring existing techniques to users.
+In this work, we evaluate whether automatically generated input-output examples
+for candidate programs will speed up the selection process.
 %
-In doing so, we seek to help users understand the solutions that current program
-synthesizers come up with.
+We asked users to complete a series of synthesis tasks using a modified
+version of, \hoogleplus, a program synthesizer for the Haskell
+\cite{hoogle_plus_2020}, that produces input/output examples.
 %
-Since current specifications tend to be underpowered, many unhelpful programs
-come up from synthesizers.
-%
-
-Specifically, we seek to understand the degree to which input-output examples on
-synthesized functions aid users
-in finding the program they came to the synthesizer for.
-
-
-We base our work on \hoogleplus, a program synthesis engine for the
-Haskell programming language \cite{hoogle_plus_2020}.
-%
-A user inputs a type signature of a function, like \texttt{a -> [Maybe a] -> a}
-(read: ``A function that takes a thing and a list of optional-things, then
-returns a thing'').
-%
-\hoogleplus then looks for Haskell programs that use library calls (from
-a small, builtin set of functions) that satisfy the type signature.
-%
-Note that there may be an infinite number of candidate solutions that satisfy a type.
-%
-This presents a search problem for users of the system.
-
-How can a user sift through the programs synthesized to find the right
-implementation of the type signature, for their use case?
-%
-We extend the system to provide some input-output examples for a chosen set of
-queries, enough to run our study.
-%
-For now these examples were stubbed and chosen without particular regard for how
-they might distinguish various candidate solutions.
-%
-
+We find that while input/output examples do not appear to provide consisten
+speedups, there is likely a set of circumstances where the speedup is
+dramatic.
