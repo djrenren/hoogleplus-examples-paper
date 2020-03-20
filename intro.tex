@@ -1,11 +1,11 @@
 \section{Introduction}
 
-Program Synthesis works by taking a specification and generating a program that
+Program synthesis works by taking a specification and generating a program that
 implements the specification.
 %
-In a sense it is the holy grail of computer science.
+In a sense it is the holy grail of computer science--to write a program for you.
 %
-There is a plethora of work trying to go straight to the goal.
+There is a plethora of work trying to go straight to the goal, in a variety of ways.
 %
 Some use input-output examples as their specification
 \cite{Feser_Chaudhuri_Dillig_2015}.
@@ -14,18 +14,19 @@ Others use types and examples \cite{Osera_Zdancewic_2015}.
 %
 Still others use just types \cite{hoogle_plus_2020}.
 
-However, in lieu of waiting for some graduate student to solve this field, we
+However, in lieu of waiting for some graduate student to solve this open
+problem, we
 adopt a more practical approach and want to bring existing techniques to users.
 %
-In doing so, we seek to help users understand the solutions that program
+In doing so, we seek to help users understand the solutions that current program
 synthesizers come up with.
 %
 Since current specifications tend to be underpowered, many unhelpful programs
 come up from synthesizers.
 %
 
-Specifically, we seek to understand the degree to which input-output examples,
-as properties of synthesized functions (instead of as specifications), aid users
+Specifically, we seek to understand the degree to which input-output examples on
+synthesized functions aid users
 in finding the program they came to the synthesizer for.
 
 
@@ -33,11 +34,11 @@ We base our work on \hoogleplus, a program synthesis engine for the
 Haskell programming language \cite{hoogle_plus_2020}.
 %
 A user inputs a type signature of a function, like \texttt{a -> [Maybe a] -> a}
-(read: ``A function that takes a thing and a list of optional-things, and
+(read: ``A function that takes a thing and a list of optional-things, then
 returns a thing'').
 %
 \hoogleplus then looks for Haskell programs that use library calls (from
-a small, builtin set of functions) that satisfies the type signature.
+a small, builtin set of functions) that satisfy the type signature.
 %
 Note that there may be an infinite number of candidate solutions that satisfy a type.
 %
