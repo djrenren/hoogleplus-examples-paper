@@ -1,25 +1,26 @@
 \section{Introduction}
-Writing code is difficult and often inadvisable. 
-%
+Writing code is difficult and often inadvisable.
+
+
 A recent approach to this classic conundrum is \emph{program synthesis} which
-takes a specification and generates a program that implements the
-specification---saving us from ourselves by letting the computer do the work.
+takes a specification and generates a program that implements it---saving us
+from ourselves by letting the computer do hard part.
 %
-The specification may be a collection of input/output pairs
+A specification may be a collection of input/output pairs
 \cite{Feser_Chaudhuri_Dillig_2015}, a type signature \cite{hoogle_plus_2020},
 or even a combination of the two \cite{Osera_Zdancewic_2015}.
 %
-These specifications are intentionally vague; many programs different
-programs might meet the specification.
+These specifications are intentionally vague; many different
+programs might meet the same specification.
 %
-This keeps specification easy, but it requires the synthesizer to either guess,
+While this keeps specification simple, it requires the synthesizer to either guess,
 or, more realistically, produce multiple candidate programs.
 
-Sifting through a list of candidate programs can be timeconsuming, so much so
+Sifting through a list of candidate programs can be time-consuming, so much so
 that it might be faster to write the code yourself.
 %
 If we could speed up this process, without requiring more input from the
-user, we could allow programmers to both write easy specifications and
+user, we could allow programmers to both write simple specifications and
 efficiently find their desired program.
 
 In this work, we evaluate whether automatically generated input-output examples
@@ -29,6 +30,6 @@ We asked users to complete a series of synthesis tasks using a modified
 version of, \hoogleplus, a program synthesizer for the Haskell
 \cite{hoogle_plus_2020}, that produces input/output examples.
 %
-We find that while input/output examples do not appear to provide consisten
+We find that while input/output examples do not appear to provide consistent
 speedups, there is likely a set of circumstances where the speedup is
 dramatic.
