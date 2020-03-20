@@ -23,8 +23,11 @@ developed two variants of a synthesizer interface (see Figure~\ref{fig:ui})
 In the \noexamples variant, a user can enter a Haskell type signature at the top and get a
 list of 10 candidate programs back.
 %
-These candidates are unmodified and in the same order that \hoogleplus
-synthesizer generates them.
+These candidates are mostly unmodified and in the same order that \hoogleplus
+generates them.
+%
+The sole exception is Task 2, where the correct answer was manually inserted at
+the end of the existing candidates.
 %
 The results are deterministic meaning that for a given type signature, the
 response is always the same.
@@ -33,28 +36,28 @@ response is always the same.
 The \examples variant extends the \noexamples variant with input/output
 examples for each candidate.
 %
-For each, type signature in the study, we manually created three simple
+For each type signature in the study, we manually created three simple
 inputs of the appropriate type.
 %
 Each candidate program received the same three inputs.
 
 
 \subsection{Procedure}
-We gathered 10 haskell-literate participants from around our department's
+We gathered 10 Haskell-literate participants from around our department's
 building and from the local Hillcrest community.
 %
 Participants were each assigned to either the \noexamples treatment or the
 \examples treatment for the duration of the study.
 %
 Each participant was presented a laptop with their respective tool variant open
-and an interactive haskell interpreter (GHCI) open to the side.
+and an interactive Haskell interpreter (GHCI) open to the side.
 %
 Throughout the study participants were allowed to use only the tool and the
 interpreter.
 
-After a brief tutorial tasks, participants were asked to complete 4 tasks.
+After a brief tutorial task, participants were asked to complete 4 tasks.
 %
-Each task consisted of a type signature they would enter, and an informal
+Each task consisted of a type signature and an informal
 english description of the behavior they were looking for.
 %
 They would then enter the type signature and identify the candidate program that
@@ -64,7 +67,7 @@ Participants were told at the beginning that the solution may not be present
 in the list---Task 3 did not have a solution in the list.
 
 After completing the four tasks, the candidates were given a brief survey
-that asked them about their haskell experience, their opinions on the tool,
+that asked them about their Haskell experience, their opinions on the tool,
 and their strategies for finding the correct answer.
 
 

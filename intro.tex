@@ -1,19 +1,35 @@
 \section{Introduction}
 
-Imagine asking your computer to write a function for you and it works on the
-first try.
+Program Synthesis works by taking a specification and generating a program that
+implements the specification.
 %
-Well, program synthesis isn't quite there.
+In a sense it is the holy grail of computer science.
 %
-But getting there will necessarily involve some back and forth between the user
-and computer.
+There is a plethora of work trying to go straight to the goal.
 %
-Often the function specification is less precise the than function requested.
+Some use input-output examples as their specification
+\cite{Feser_Chaudhuri_Dillig_2015}.
 %
-In this case, a program synthesizer can come up with any number of solutions
-that all meet the specification, to varying degrees of utility.
+Others use types and examples \cite{Osera_Zdancewic_2015}.
+%
+Still others use just types \cite{hoogle_plus_2020}.
 
-Our work is based on \hoogleplus, a program synthesis engine for the
+However, in lieu of waiting for some graduate student to solve this field, we
+adopt a more practical approach and want to bring existing techniques to users.
+%
+In doing so, we seek to help users understand the solutions that program
+synthesizers come up with.
+%
+Since current specifications tend to be underpowered, many unhelpful programs
+come up from synthesizers.
+%
+
+Specifically, we seek to understand the degree to which input-output examples,
+as properties of synthesized functions (instead of as specifications), aid users
+in finding the program they came to the synthesizer for.
+
+
+We base our work on \hoogleplus, a program synthesis engine for the
 Haskell programming language \cite{hoogle_plus_2020}.
 %
 A user inputs a type signature of a function, like \texttt{a -> [Maybe a] -> a}
@@ -23,7 +39,7 @@ returns a thing'').
 \hoogleplus then looks for Haskell programs that use library calls (from
 a small, builtin set of functions) that satisfies the type signature.
 %
-Note that there may be an infinite number of so-called \emph{inhabitants} of a type.
+Note that there may be an infinite number of candidate solutions that satisfy a type.
 %
 This presents a search problem for users of the system.
 
